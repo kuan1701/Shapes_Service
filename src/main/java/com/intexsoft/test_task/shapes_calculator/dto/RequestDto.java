@@ -1,16 +1,12 @@
 package com.intexsoft.test_task.shapes_calculator.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-
-import java.util.List;
 
 @Getter
 @Setter

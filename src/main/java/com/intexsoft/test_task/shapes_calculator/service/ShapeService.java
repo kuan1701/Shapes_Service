@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 public class ShapeService {
 
   public Double getPerimeterOfShape(RequestDto requestDto) {
-    return ShapeFactory.getShape(requestDto.getType(), requestDto.getParameters()).getPerimeter();
+    return ShapeFactory.getShape(requestDto).getPerimeter();
   }
 
   public Double getSquareOfShape(RequestDto requestDto) {
-    return ShapeFactory.getShape(requestDto.getType(), requestDto.getParameters()).getSquare();
+    return ShapeFactory.getShape(requestDto).getSquare();
   }
 }

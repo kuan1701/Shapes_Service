@@ -11,5 +11,4 @@ import lombok.experimental.Accessors;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseDto {
     private Double result;
-    private String ErrorMessage;
 }
