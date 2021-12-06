@@ -1,34 +1,19 @@
 package com.intexsoft.test_task.shapes_calculator.service;
 
-import com.intexsoft.test_task.shapes_calculator.model.Shape;
-import com.intexsoft.test_task.shapes_calculator.model.ShapeFactory;
-import com.intexsoft.test_task.shapes_calculator.util.ParametersValidator;
+import com.intexsoft.test_task.shapes_calculator.dto.RequestDto;
+import com.intexsoft.test_task.shapes_calculator.service.factory.ShapeFactory;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class ShapeService {
 
-    private final ParametersValidator parametersValidator;
+  public Double getPerimeterOfShape(RequestDto requestDto) {
+    return ShapeFactory.getShape(requestDto.getType(), requestDto.getParameters()).getPerimeter();
+  }
 
-    public Double getPerimeterOfShape(String type, List<Double> parameters) {
-        if (parametersValidator.isValidParameters(parameters)) {
-            Shape shape = ShapeFactory.getShape(type, parameters);
-            assert shape != null;
-            return shape.getPerimeter();
-        }
-        return null;
-    }
-
-    public Double getSquareOfShape(String type, List<Double> parameters) {
-        if (parametersValidator.isValidParameters(parameters)) {
-            Shape shape = ShapeFactory.getShape(type, parameters);
-            assert shape != null;
-            return shape.getSquare();
-        }
-        return null;
-    }
+  public Double getSquareOfShape(RequestDto requestDto) {
+    return ShapeFactory.getShape(requestDto.getType(), requestDto.getParameters()).getSquare();
+  }
 }
